@@ -1,0 +1,69 @@
+﻿<script id="listTemplate" type="text/html">
+    <div data-role="page" data-add-back-btn="true" data-url="listpage&term={search_term}&page={page_number}" data-external-page="true" id="listpage">
+        <div data-role="header">
+            <h1>Search results page {page_number}</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                {#links}
+                    <li>
+                        {?prev}
+                            <a data-icon="back" data-theme="b" class="prev" href="{prev}" title="Previous page">Previous</a>
+                        {:else}
+                            <a data-icon="back" data-theme="b" class="ui-disabled prev" href="javascript: return false;" title="Previous page">Previous</a>
+                        {/prev}
+                    </li>
+                    <li>
+                        {?next}
+                            <a data-icon="forward" data-theme="b" class="next" href="{next}" title="Next page">Next</a>
+                        {:else}
+                            <a data-icon="forward" data-theme="b" class="ui-disabled next" href="javascript: return false;" title="Next page">Next</a>
+                        {/next}
+                    </li>
+                {/links}
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <ul data-role="listview">
+                {#movies}
+                    <li>
+                        <a href="{links.self}" class="item-{@idx}{.}{/idx}">
+                            <article>
+                                <header>
+                                    <img src="{posters.thumbnail}" alt="{title}" />
+                                     <h1>{title}</h1>
+                                 </header>
+                                 {?critics_consensus}
+                                    <div>{critics_consensus}</div>
+                                 {/critics_consensus}
+                            </article>
+                        </a>
+                    </li>
+                {/movies}
+            </ul>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                {#links}
+                    <li>
+                        {?prev}
+                            <a data-icon="back" data-theme="b" class="prev" href="{prev}" title="Previous page">Previous</a>
+                        {:else}
+                            <a data-icon="back" data-theme="b" class="ui-disabled prev" href="javascript: return false;" title="Previous page">Previous</a>
+                        {/prev}
+                    </li>
+                    <li>
+                        {?next}
+                            <a data-icon="forward" data-theme="b" class="next" href="{next}" title="Next page">Next</a>
+                        {:else}
+                            <a data-icon="forward" data-theme="b" class="ui-disabled next" href="javascript: return false;" title="Next page">Next</a>
+                        {/next}
+                    </li>
+                {/links}
+            </ul>
+        </div>
+    </div>
+</script>

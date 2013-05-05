@@ -1,0 +1,29 @@
+﻿<script id="itemTemplate" type="text/html">
+    <div data-role="page" data-add-back-btn="true" data-url="itempage&id={id}" data-external-page="true" id="itempage">
+        <div data-role="header">
+            <h1>{title}</h1>
+        </div>
+
+        <div data-role="content">
+            <article>
+                <header>
+                    <img src="{posters.detailed}" alt="{title}" />
+                    <h1>{title}</h1>
+                    <dl>
+                        <dt>Released:</dt><dd>{?release_dates.theater}{release_dates.theater}{:else}{release_dates.dvd}{/release_dates.theater}</dd>
+                        <dt>MPAA reating:</dt><dd>{mpaa_rating}</dd>
+                        <dt>Length:</dt><dd>{runtime}</dd>
+                    </dl>
+                </header>
+                <blockquote>{critics_consensus}</blockquote>
+                <div>{synopsis}</div>
+                <h2>Starring:</h2>
+                <ul>
+                    {#abridged_cast}
+                        <li>{name}</li>
+                    {/abridged_cast}
+                </ul>
+            </article>
+        </div>
+    </div>
+</script>
